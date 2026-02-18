@@ -9,7 +9,7 @@
 
     <style>
       html, body { margin: 0; height: 100%; background: #000; }
-      #dos { width: 100%; height: 100%; }
+      #dos { width: 100%; height: 100vh; }
     </style>
   </head>
 
@@ -17,10 +17,15 @@
     <div id="dos"></div>
 
     <script>
-      window.addEventListener("load", () => {
-        Dos(document.getElementById("dos"), {
+      window.addEventListener("load", async () => {
+        const el = document.getElementById("dos");
+
+        const dos = await Dos(el, {
           wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
-        }).run("https://js-dos.com/cdn/upload/DOOM-@evilution.zip");
+        });
+
+        // Jogo de exemplo (você pode trocar depois)
+        await dos.run("https://js-dos.com/cdn/upload/DOOM-@evilution.zip");
       });
     </script>
   </body>
