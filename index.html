@@ -17,15 +17,14 @@
     <div id="dos"></div>
 
     <script>
-      window.addEventListener("load", async () => {
+      window.addEventListener("load", () => {
         const el = document.getElementById("dos");
 
-        const dos = await Dos(el, {
+        Dos(el, {
           wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
+        }).then((dosbox) => {
+          dosbox.run("https://js-dos.com/cdn/upload/DOOM-@evilution.zip");
         });
-
-        // Jogo de exemplo (você pode trocar depois)
-        await dos.run("https://js-dos.com/cdn/upload/DOOM-@evilution.zip");
       });
     </script>
   </body>
